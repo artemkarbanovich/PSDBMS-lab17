@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.btnSelectWithParam).setOnClickListener(view -> {
-            String result = dbHelper.select("select FIRSTNAME, LASTNAME, BIRTHPLACE from T1" +
-                    " where FIRSTNAME = 'Артём' or FIRSTNAME = 'Вова';");
+            String result = dbHelper.preperSelect("Артём", "Вова");
             if(result != null)
               Log.d("SELECT WITH PARAM", result);
         });
